@@ -1,10 +1,56 @@
 <app-header></app-header>
-<div>
-    <h1>hi </h1>
-    <ul *ngFor="let production of productions">
-        <li>{{production.name}}</li>
-    </ul>
 
+ <div class="container">
+
+    <!-- <ul class="flex-item" *ngFor="let production of productions">
+      <div class="card">
+
+      <div class="card-card-img">
+        <img src="{{production.mainImage}}" alt="product picture">    
+      </div> 
+      <div class="product-card-info">
+        <div>
+            <p>{{production.name}}</p>
+        </div>
+        <div>
+            <p>{{production.brandName}}</p>
+        </div>
+        <div>
+            <p>{{production.price.currency}}</p>
+        
+            <p>{{production.price.amount}}</p>
+        </div>
+        
+
+         <p class="text-right"><[routerLink]="['/production/',beer.id]">DETAIL /></p>
+    </div> 
+
+      </div>
+    </ul>
+    
+</div>   -->
+
+<div class="container">
+    <p class="result-text"><span>{{productLen}}</span> Result</p>
+    
+    <mat-card class="production-card" *ngFor="let production of productions">
+    <a [routerLink]="['/production',production.id]">
+    <img mat-card-image src="{{production.mainImage}}" alt="Photo of products">
+
+    <mat-card-content>
+        <div>
+            <p>{{production.name}}</p>
+        </div>
+        <div>
+            <p>{{production.brandName}}</p>
+        </div>
+        <div>        
+            <p><span>{{production.price.currency}}</span>  {{production.price.amount}}</p>
+        </div>
+    </mat-card-content>
+    </a>
+
+  </mat-card>
 </div>
  
 

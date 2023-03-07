@@ -7,6 +7,9 @@ import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AngularMaterialModule } from './shared/angular-material.module';
 
+import { RouterModule} from '@angular/router';
+
+
 @NgModule({
   declarations: [
     ProductionsComponent,
@@ -18,6 +21,14 @@ import { AngularMaterialModule } from './shared/angular-material.module';
   imports: [
     CommonModule,
     AngularMaterialModule,
+    RouterModule
+  ],
+  exports: [
+    ProductionsComponent,
+    ProductionDetailsComponent,
+    ViewedProductionsComponent,
+    CartComponent,
+    HeaderComponent
   ]
 })
 export class FeatureModule { }

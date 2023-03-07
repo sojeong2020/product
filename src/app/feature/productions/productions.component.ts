@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/core/data.service';
-import { Result, Production } from 'src/app/core/model';
+import { Production } from 'src/app/core/model';
 
 @Component({
   selector: 'app-productions',
@@ -10,13 +10,16 @@ import { Result, Production } from 'src/app/core/model';
 export class ProductionsComponent implements OnInit {
 
   productions?: Production[];
+  productLen?:number;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getProducts()
-    .subscribe( response => 
-    this.productions = response.data
+    .subscribe( (response) =>{ 
+     this.productions = response.data
+     this.productLen = response.data.length
+    }
     )
   }
 

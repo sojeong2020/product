@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductionsComponent } from './feature/productions/productions.component';
+import { ProductionDetailsComponent } from './feature/production-details/production-details.component';
 
 const routes: Routes = [
 
-    {path:'production', component: ProductionsComponent},
+    {path:'productions', component: ProductionsComponent},
+    {path:'production/:id', component: ProductionDetailsComponent},
 
-    { path: '', redirectTo: 'production', pathMatch: 'full' },
+    { path: '', redirectTo: 'productions', pathMatch: 'full' },
   
 ];
 

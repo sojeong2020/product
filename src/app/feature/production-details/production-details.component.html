@@ -1,6 +1,21 @@
 <app-header></app-header>
 
-<p>production-details works!</p>
+<ng-container *ngIf="production">
+    <div class="container">
+     <div  class="card">
+        <div class="img">
+            <img [src]="production.mainImage" />
+        </div>
+        <div class="card-title">
+            <p>{{production.name}}</p>
+        </div>
+        <div class="card-content">
+            <p>{{production.description}}</p>
 
+        </div>
+    </div>   
+    </div>
+    </ng-container>
+    
 
 <app-viewed-productions></app-viewed-productions>
