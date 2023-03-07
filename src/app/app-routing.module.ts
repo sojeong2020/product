@@ -4,8 +4,9 @@ import { ProductionsComponent } from './feature/productions/productions.componen
 
 const routes: Routes = [
 
-    {path:'index', component: ProductionsComponent},
+    {path:'production', component: ProductionsComponent},
 
+    { path: '', redirectTo: 'production', pathMatch: 'full' },
   
 ];
 
