@@ -11,6 +11,7 @@ import { DataService } from 'src/app/core/data.service';
 export class ProductionDetailsComponent implements OnInit {
 
   production?: Production;
+  sizes?:[];
 
   constructor(private route: ActivatedRoute,
     private dataService: DataService) { }
@@ -27,8 +28,9 @@ export class ProductionDetailsComponent implements OnInit {
     .subscribe( (response) =>{
       console.log(response.data)
       const production = response.data.find( p => p.id === id)
-      console.log(production)
       this.production = production;
+      this.sizes = this.production?.sizes;
+      console.log(this.sizes,"sizes")
     })
   }
 }

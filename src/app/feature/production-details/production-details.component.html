@@ -1,21 +1,35 @@
 <app-header></app-header>
 
+<div class="container-details">   
 <ng-container *ngIf="production">
-    <div class="container">
-     <div  class="card">
-        <div class="img">
-            <img [src]="production.mainImage" />
-        </div>
-        <div class="card-title">
-            <p>{{production.name}}</p>
-        </div>
-        <div class="card-content">
-            <p>{{production.description}}</p>
-
-        </div>
-    </div>   
+  <div class="row">
+    <div class="colum detail-imag">
+      <img  src="{{production.mainImage}}">
     </div>
-    </ng-container>
-    
+    <div class="colum detail-info">
+      <h2>{{production.name}}</h2>
+      <p><span>SKU: </span>{{production.SKU}}</p>
+      <P>{{production.stockStatus}}</P>
 
+      <P>{{production.brandName}}</P>
+      <P><span>{{production.price.currency}}</span> {{production.price.amount}}</P>
+      <P>{{production.colour}}</P>
+
+      <p>Sizes</p>
+      <ul *ngFor="let size of sizes">
+       <button class="size">{{size}}</button>      
+      </ul>
+
+      <button class="btn add-cart">Add to Cart</button>
+
+      <P>{{production.description}}</P>
+
+    </div>
+
+  </div>
+</ng-container>
+</div> 
+
+<div class="container viewed-productions">
 <app-viewed-productions></app-viewed-productions>
+</div>
