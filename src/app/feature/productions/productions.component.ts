@@ -12,6 +12,8 @@ export class ProductionsComponent implements OnInit {
   productions?: Production[];
   productLen?:number;
 
+
+  
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -22,5 +24,6 @@ export class ProductionsComponent implements OnInit {
     }
     )
   }
+
 
 }

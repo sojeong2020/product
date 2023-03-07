@@ -1,11 +1,11 @@
-<mat-toolbar>
-    <div>
-<!--         <a router-link="/productions" >Production </a>
- -->        <a [routerLink]="['/productions']">Production</a>
+<div class="topnav">
+    
+    <div  class="header-menu">
+        <a [routerLink]="['/productions']">Production</a>
+        <a [routerLink]="['/cart']"> <mat-icon>shopping_cart</mat-icon></a> 
+        <p class="cart-count">{{cartCount}}</p>
     </div>
-    <div>
-        <mat-icon>shopping_cart</mat-icon>
-        <a>0</a>
-    </div>
+
   
-</mat-toolbar>
+
+</div>
