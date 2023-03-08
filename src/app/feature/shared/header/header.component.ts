@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/core/cart.service';
-import { Production } from 'src/app/core/model';
+
 
 @Component({
   selector: 'app-header',
@@ -16,10 +16,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.cartService.getCartObservable()
+    .subscribe(response => {
+      this.cartCount = response.totalCount
+    })
   }
 
-  itemCount(){
-    return  this.cartService.itemCount();
-  }
 
 }

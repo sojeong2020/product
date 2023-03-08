@@ -9,13 +9,14 @@ import { Production } from 'src/app/core/model';
 })
 export class ViewedProductionsComponent implements OnInit {
 
-  viewedItems:Production[]=[]
+  displayedColumns: string[] = ['picture','name', 'brandName', 'colour'];
+  dataSource: Production[]=[];
 
   constructor(private viewedItemService: ViewedItemService) { }
 
   ngOnInit(): void {
-    this.viewedItems = this.viewedItemService.getView();
-    console.log(this.viewedItems,"this.viewedItems")
+    this.dataSource = this.viewedItemService.getView();
+    console.log(this.dataSource,"this.viewedItems")
   }
 
 }

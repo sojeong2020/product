@@ -20,6 +20,6 @@ export interface Production {
 }
 
 interface Price {
-    amount: string,
+    amount: number,
     currency:string
 }

@@ -15,6 +15,8 @@ export class DataService {
   getProducts(): Observable<Result>{
     return this.http.get<Result>(this.url)
   }
+
+ 
    
   
 }

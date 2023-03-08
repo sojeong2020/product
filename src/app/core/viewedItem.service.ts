@@ -10,6 +10,9 @@ export class ViewedItemService {
 viewedItems: Production[]=[];
 
 view(production: Production){
+  let viewProduct = this.viewedItems.find(item => item.id == production.id);
+  if(viewProduct)
+  return;
 
     this.viewedItems.push(production);
 }

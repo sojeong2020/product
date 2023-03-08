@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Production } from 'src/app/core/model';
 import { DataService } from 'src/app/core/data.service';
 import { CartService } from 'src/app/core/cart.service';
@@ -21,9 +21,10 @@ export class ProductionDetailsComponent implements OnInit {
 
   viewdItems?:Production[];
 
-  constructor(private route: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
     private dataService: DataService,
     private cartService: CartService,
+    private router: Router,
     private viewedItemService: ViewedItemService) { 
       
     }
@@ -33,9 +34,9 @@ export class ProductionDetailsComponent implements OnInit {
   }
 
   getProduct():void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(id,"id")
-
+ 
     this.dataService.getProducts()
     .subscribe( (response) =>{
       console.log(response.data)
@@ -51,7 +52,7 @@ export class ProductionDetailsComponent implements OnInit {
     console.log(production,"production")
     this.cartService.addToCart(production);
     window.alert('Your product has been added to the cart!');
-    
+    this.router.navigateByUrl('/cart');
   }
 
   
