@@ -7,13 +7,40 @@ import { Result, Production } from './model';
 })
 export class CartService {
 
-    prodCount = 0;
 
-    prodCountCountChange: Subject<number> = new Subject<number>();
+    items: Production[]=[];
+
     
-    UpdateCount(count: number) {
-        this.prodCount = count;
-        this.prodCountCountChange.next(this.prodCount);
-      }
   
+    addToCart(production: Production) {
+        this.items.push(production);
+      }
+    
+    getItems() {
+        return this.items;
+      }
+    
+    clearCart() {
+        this.items = [];
+        return this.items;
+      }
+
+    itemCount(){
+        return this.items.length;
+      }
+
+    total(){
+        if(this.itemCount.length !==0){
+    let priceArr=[]
+    this.items.map(item => {
+        priceArr.push(item.price.amount)
+
+        
+    })
+    
+
+        }
+
+    }
+
 }

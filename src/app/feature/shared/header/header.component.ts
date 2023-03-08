@@ -10,16 +10,16 @@ import { Production } from 'src/app/core/model';
 export class HeaderComponent implements OnInit {
 
   cartCount?: number;
-  cartItem?: Production[];
   
   constructor(private cartService: CartService) { 
-    this.cartService.prodCountCountChange.subscribe(count => {
-      this.cartCount = count;
-    });
+  
   }
 
   ngOnInit(): void {
-    this.cartCount = this.cartService.prodCount;
+  }
+
+  itemCount(){
+    return  this.cartService.itemCount();
   }
 
 }

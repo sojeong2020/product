@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Production } from 'src/app/core/model';
 import { DataService } from 'src/app/core/data.service';
 import { CartService } from 'src/app/core/cart.service';
+import { ViewedItemService } from 'src/app/core/viewedItem.service';
+
 
 @Component({
   selector: 'app-production-details',
@@ -17,17 +19,17 @@ export class ProductionDetailsComponent implements OnInit {
   cartCount!: number;
   cartItem?: Production[];
 
+  viewdItems?:Production[];
+
   constructor(private route: ActivatedRoute,
     private dataService: DataService,
-    private cartService: CartService) { 
-      this.cartService.prodCountCountChange.subscribe(count => {
-        this.cartCount = count;
-      });
+    private cartService: CartService,
+    private viewedItemService: ViewedItemService) { 
+      
     }
 
   ngOnInit(): void {
     this.getProduct()
-    this.cartCount = this.cartService.prodCount;
   }
 
   getProduct():void {
@@ -40,13 +42,17 @@ export class ProductionDetailsComponent implements OnInit {
       const production = response.data.find( p => p.id === id)
       this.production = production;
       this.sizes = this.production?.sizes;
-      console.log(this.sizes,"sizes")
+      this.viewedItemService.view(production!)
+
     })
   }
 
-  addCount(){
-    console.log("clicked add cart")
-    this.cartCount++
-    console.log(this.cartCount,"this.cartCount")
+  addToCart(production: Production){
+    console.log(production,"production")
+    this.cartService.addToCart(production);
+    window.alert('Your product has been added to the cart!');
+    
   }
+
+  
 }

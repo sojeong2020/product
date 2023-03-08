@@ -1,1 +1,28 @@
-<p>viewed-productions works!</p>
+<div class="container">
+    <ng-container *ngIf="viewedItems.length !== 0">
+<p>Recently You have viewed.</p>
+    <mat-card class="production-card" *ngFor="let viewedItem of viewedItems">
+    <a [routerLink]="['/production',viewedItem.id]">
+    <img mat-card-image src="{{viewedItem.mainImage}}" alt="Photo of products">
+
+    <mat-card-content>
+        <div>
+            <p>{{viewedItem.name}}</p>
+        </div>
+        <div>
+            <p>{{viewedItem.brandName}}</p>
+        </div>
+        <div>        
+            <p><span>{{viewedItem.price.currency}}</span>  {{viewedItem.price.amount}}</p>
+        </div>
+    </mat-card-content>
+    </a>
+
+  </mat-card>
+</ng-container>
+
+<ng-container *ngIf="viewedItems.length === 0">
+    <p>Recently You haven't viewed.</p>
+</ng-container>
+</div>
+ 

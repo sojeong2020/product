@@ -12,7 +12,7 @@
       <P>{{production.stockStatus}}</P>
 
       <P>{{production.brandName}}</P>
-      <P><span>{{production.price.currency}}</span> {{production.price.amount}}</P>
+      <P><span>{{production.price.currency}}</span> {{production.price.amount | currency: 'GBP'}} </P>
       <P>{{production.colour}}</P>
 
       <p>Sizes</p>
@@ -20,7 +20,7 @@
        <button class="size">{{size}}</button>      
       </ul>
 
-      <button (click)="addCount()" class="btn add-cart">Add to Cart</button>
+      <button (click)="addToCart(production)" class="btn add-cart">Add to Cart</button>
 
       <P>{{production.description}}</P>
 

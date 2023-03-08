@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductionsComponent } from './productions/productions.component';
 import { ProductionDetailsComponent } from './production-details/production-details.component';
-import { ViewedProductionsComponent } from './viewed-productions/viewed-productions.component';
 import { CartComponent } from './cart/cart.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { ViewedProductionsComponent } from './shared/viewed-productions/viewed-productions.component';
 import { AngularMaterialModule } from './shared/angular-material.module';
 
 import { RouterModule} from '@angular/router';
@@ -14,9 +14,9 @@ import { RouterModule} from '@angular/router';
   declarations: [
     ProductionsComponent,
     ProductionDetailsComponent,
-    ViewedProductionsComponent,
     CartComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewedProductionsComponent
   ],
   imports: [
     CommonModule,
@@ -26,9 +26,9 @@ import { RouterModule} from '@angular/router';
   exports: [
     ProductionsComponent,
     ProductionDetailsComponent,
-    ViewedProductionsComponent,
     CartComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewedProductionsComponent
   ]
 })
 export class FeatureModule { }

@@ -12,6 +12,8 @@ export class ProductionsComponent implements OnInit {
   productions?: Production[];
   productLen?:number;
 
+  viewedItems?:Production[];
+
 
   
   constructor(private dataService: DataService) { }
