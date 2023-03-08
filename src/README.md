@@ -35,5 +35,6 @@ Develop a simple shopping Application using Angular 13
 * Use global style CSS
 
 ## View
-![GitHub Logo](/assets/images/cart1.png)
-![GitHub Logo](/assets/images/cart2.png)
+
+<img src="/assets/images/cart1.png" alt="Alt text" title="Optional title">
+<img src="/assets/images/cart2.png" alt="Alt text" title="Optional title">
