@@ -35,5 +35,5 @@ Develop a simple shopping Application using Angular 13
 
 ## View
 
-<img src="/assets/images/cart1.png" alt="Alt text" title="Optional title">
-<img src="/assets/images/cart2.png" alt="Alt text" title="Optional title">
+<img src="/src/assets/images/cart1.png" width="250" >
+<img src="/src/assets/images/detail.png" width="250" >
