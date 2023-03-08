@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/core/cart.service';
-import { Production } from 'src/app/core/model';
 import { Cart } from 'src/app/core/cart';
 import { CartItem } from 'src/app/core/cartItem';
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -17,15 +17,15 @@ export class CartComponent implements OnInit {
 
   totalPrice?:any;
 
+  obs!: Subscription;
+
   constructor(private cartService: CartService ) { }
 
   ngOnInit(): void {
-    this.cartService.getCartObservable()
+    this.obs = this.cartService.getCartObservable()
     .subscribe(response =>{
-      console.log(response.items, "response form cart")
       this.cartProductions = response.items;
       this.totalPrice = response.totalPrice;
-      console.log(this.totalPrice,"totalPrice")
 
     })
 
@@ -37,6 +37,10 @@ export class CartComponent implements OnInit {
 
   clear(){
     this.cartService.clearCart()
+  }
+
+  ngOnDestroy(){
+    this.obs.unsubscribe();
   }
 
 

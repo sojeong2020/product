@@ -1,1 +1,16 @@
-@import url("../../../assets/css/card.css");
+
+  .result-text{
+    padding:8px;
+    font-size: 18px;
+    color:rgb(79, 13, 141);
+  } 
+  
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+.production-card{
+    flex: 1 0 500px;
+    box-sizing: border-box;
+    margin: 1rem .25em;
+}

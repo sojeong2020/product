@@ -8,7 +8,6 @@ import { ViewedProductionsComponent } from './shared/viewed-productions/viewed-p
 import { AngularMaterialModule } from './shared/angular-material.module';
 
 import { RouterModule} from '@angular/router';
-import { TotalPricePipe } from './shared/pipes/total-price.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { TotalPricePipe } from './shared/pipes/total-price.pipe';
     HeaderComponent,
     ViewedProductionsComponent,
     
-    TotalPricePipe,
   ],
   imports: [
     CommonModule,

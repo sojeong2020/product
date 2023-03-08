@@ -1,10 +1,54 @@
-.container-cart{
-margin:20px;
-}
+
 
 table {
     width: 100%;
   }
-img{
-    width:200px;
+.table-title{
+  padding:10px;
+  text-align: left;
+}
+#production-table {
+  width: 100%;
+  border-collapse: collapse;  
+
+}
+#production-table th, #production-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+#production-table thead th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  position: sticky;
+  top:0;
+  color:rgb(3, 3, 41);
+  z-index: 1;
+  background-color: rgb(246, 250, 249);
+
+}
+
+
+#production-table tbody td .table-cell{
+  width: 100px;
+  height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+
+.delete-btn {
+  color:rgb(15, 8, 114);
+  cursor: pointer;
+  }
+.clear-btn{
+  background-color: rgb(199, 92, 92);
+  padding:5px 10px;
+  border-radius: 3px;
+  border: none;
+  color:white;
+}
+.total{
+ margin-top:10px;
 }

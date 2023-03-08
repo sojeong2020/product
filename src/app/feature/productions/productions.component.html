@@ -1,8 +1,10 @@
 <app-header></app-header>
 
-
-<div class="container">
+<div>
     <p class="result-text"><span>{{productLen}}</span> Result</p>
+</div>
+
+<div class="container cards-container">
     
     <mat-card class="production-card" *ngFor="let production of productions">
     <a [routerLink]="['/production',production.id]">
@@ -26,4 +28,6 @@
  
 
 
-<app-viewed-productions></app-viewed-productions>
+<section class="container">
+    <app-viewed-productions></app-viewed-productions>
+</section>

@@ -1,5 +1,4 @@
-<div class="container">
-    <ng-container *ngIf="dataSource.length !== 0">
+<ng-container *ngIf="dataSource.length !== 0">
 <p>Recently You have viewed.</p>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -43,5 +42,4 @@
 <ng-container *ngIf="dataSource.length === 0">
     <p>Recently You haven't viewed.</p>
 </ng-container>
-</div>
  
